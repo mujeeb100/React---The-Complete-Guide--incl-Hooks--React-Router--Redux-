@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "./ExpenseForm.css";
 
-const ExpenseForm = () => {
+const ExpenseForm = (props) => {
   const [enteredTitle, setEntredTitle] = useState("");
   const [enteredAmount, setEntredAmount] = useState("");
   const [enteredDate, setEntredDate] = useState("");
@@ -51,7 +51,8 @@ const ExpenseForm = () => {
       amount: enteredAmount,
       date: new Date(enteredDate),
     };
-    console.log(expenseData);
+    // console.log(expenseData);
+    props.onSaveExpenseData(expenseData);
     setEntredTitle("");
     setEntredAmount("");
     setEntredDate("");

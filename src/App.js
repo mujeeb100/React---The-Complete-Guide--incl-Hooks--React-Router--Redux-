@@ -26,9 +26,16 @@ const App = () => {
     },
   ];
 
+  // child to parent component communication
+
+  const addExpensehandler = (expense) => {
+    console.log("in App.js");
+    console.log(expense);
+  };
+
   return (
     <div>
-      <NewExpenses />
+      <NewExpenses onAddExpense={addExpensehandler} />
       {/* pass the props in the components */}
       <Expenses items={expenses} />
     </div>
